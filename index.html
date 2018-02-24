@@ -14,15 +14,8 @@
   <div class="container">
 
     <div class="jumbotron">
-      <h1 class="text-center"><span class="glyphicon glyphicon-fire"></span> Hot Restaurant</h1>
-      <hr>
-      <h2 class="text-center">Make your reservation</h2>
-      <br>
-
       <div class="text-center">
-        <a href="/tables"><button type="button" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-list-alt"></span> View Tables</button></a>
-        <a href="/"><button type="button" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-home"></span></button></a>
-      </div>
+        <a href="/tables"><button type="button" class="btn btn-lg btn-default">View Tables</button></a>      </div>
     </div>
 
     <div class="row">
@@ -82,6 +75,8 @@ $(document).ready(function() {
     $.post("/reserve", newReservation)
     .then(function(data) {
       console.log(data);
+      window.location.href = '/tables';
+      return false;
     });
 
 
